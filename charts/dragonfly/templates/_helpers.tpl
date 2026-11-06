@@ -59,6 +59,25 @@ true
 {{- end -}}
 
 {{/*
+Return the in-cluster address of the redis (Valkey) subchart Service. The subchart is aliased as
+"redis", so its "valkey.fullname" resolves with "redis" as the chart name.
+*/}}
+{{- define "dragonfly.redis.host" -}}
+{{- $fullname := "" -}}
+{{- if .Values.redis.fullnameOverride -}}
+{{- $fullname = .Values.redis.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $name := default "redis" .Values.redis.nameOverride -}}
+{{- if contains $name .Release.Name -}}
+{{- $fullname = .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $fullname = printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+{{- printf "%s.%s.svc.%s" $fullname .Release.Namespace .Values.clusterDomain -}}
+{{- end -}}
+
+{{/*
 Create a default fully qualified client name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
