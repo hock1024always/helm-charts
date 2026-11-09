@@ -1,0 +1,31 @@
+charts/dragonfly/templates/injector/injector-servicemonitor.yaml
+  s_d2e1af1ce5ff84::t_9e7ccd7ee473e4 1-45
+charts/dragonfly/templates/injector/injector-service.yaml
+  s_d2e1af1ce5ff84::t_b8f6a6af132c0d 37-43,45-46
+charts/dragonfly/values.yaml
+  s_d2e1af1ce5ff84::t_28967cd58e0dae 1941-1944,1947-1969
+  s_d2e1af1ce5ff84::t_50aa633d7ae1bf 1970
+charts/dragonfly/templates/injector/injector-deployment.yaml
+  s_d2e1af1ce5ff84::t_2ff0d0d79f5a4d 81,83-85
+charts/dragonfly/README.md
+  s_d2e1af1ce5ff84::t_742493b15fc1e9 353-355,357-363
+charts/dragonfly/Chart.yaml
+  s_d2e1af1ce5ff84::t_a30efd1f5f5c3b 6
+  s_d2e1af1ce5ff84::t_157453e640771c 30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "cf96bd53558c6f69c829c7e6a98672ba853e3860",
+  "prompts": {},
+  "sessions": {
+    "s_d2e1af1ce5ff84": {
+      "agent_id": {
+        "tool": "antcc",
+        "id": "5c7e2d15-221a-4767-880d-a5314727ab22",
+        "model": "glink/GLM-5.3:glink_domestic"
+      },
+      "human_author": "xiaoqian <xiaoqian@U-2PF333RF-2026.local>"
+    }
+  }
+}
